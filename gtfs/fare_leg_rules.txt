@@ -1,0 +1,9 @@
+leg_group_id,from_area_id,to_area_id,fare_product_id
+local,L,L,prod_emv_fixo
+local,1,1,prod_emv_fixo
+zona,L,C,prod_emv_fixo
+zona,C,L,prod_emv_fixo
+zona,1,C,prod_emv_fixo
+zona,C,1,prod_emv_fixo
+interurbana,L,1,prod_emv_fixo
+interurbana,1,L,prod_emv_fixo
