@@ -2,7 +2,7 @@
 """Constrói o grafo da rede do Metro a partir do GTFS: para cada par de
 estações adjacentes, o tempo de viagem (segundos) e a linha.
 
-Gera graph.json e app/graph.js:
+Gera graph.json e docs/graph.js:
   { "AM": [ ["AR", 74, "C"], ["AN", 88, "D"], ... ], ... }
   (estação -> lista de [vizinha, segundos, linha])
 """
@@ -58,10 +58,10 @@ out = {a: [[b, int(dt), line] for (b, line), dt in sorted(nb.items())]
 
 json.dump(out, open(os.path.join(BASE, "graph.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
-appjs = os.path.join(BASE, "app", "graph.js")
+appjs = os.path.join(BASE, "docs", "graph.js")
 if os.path.isdir(os.path.dirname(appjs)):
     open(appjs, "w", encoding="utf-8").write(
         "window.GRAPH = " + json.dumps(out, ensure_ascii=False) + ";\n")
 
 edges = sum(len(v) for v in out.values())
-print(f"{len(out)} estações, {edges} arestas -> graph.json + app/graph.js")
+print(f"{len(out)} estações, {edges} arestas -> graph.json + docs/graph.js")

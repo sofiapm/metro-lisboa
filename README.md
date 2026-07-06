@@ -14,7 +14,7 @@ próxima de uma localização ou morada.
 | `nearest.py` | Estação mais próxima de coordenadas ou morada |
 | `build_exits.py` | Puxa as saídas do OpenStreetMap e associa-as às estações |
 | `exits.json` | Saídas por estação (nome, coords, acesso cadeira de rodas) |
-| `app/` | Web app: mapa com estações + saídas ao clicar |
+| `docs/` | Web app: mapa com estações + saídas ao clicar |
 | `update_gtfs.sh` | Redescarrega o GTFS e reconstrói `stations.json` + saídas |
 
 ## Usar

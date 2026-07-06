@@ -75,8 +75,8 @@ with open(dest, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
 
 # também para a web app (permite abrir index.html via file:// sem servidor)
-appjs = os.path.join(base, "app", "stations.js")
+appjs = os.path.join(base, "docs", "stations.js")
 if os.path.isdir(os.path.dirname(appjs)):
     with open(appjs, "w", encoding="utf-8") as f:
         f.write("window.STATIONS = " + json.dumps(out, ensure_ascii=False) + ";\n")
-print(f"{len(out)} estações -> stations.json + app/stations.js")
+print(f"{len(out)} estações -> stations.json + docs/stations.js")

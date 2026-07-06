@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Puxa as entradas/saídas do metro do OpenStreetMap e associa-as à estação
-mais próxima. Gera exits.json e app/exits.js.
+mais próxima. Gera exits.json e docs/exits.js.
 
 O GTFS oficial do Metro não tem saídas; o OSM tem (railway=subway_entrance).
 """
@@ -120,8 +120,8 @@ print(f"{total} saídas associadas a {com}/{len(stations)} estações "
 
 json.dump(by_station, open(os.path.join(BASE, "exits.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=2)
-appjs = os.path.join(BASE, "app", "exits.js")
+appjs = os.path.join(BASE, "docs", "exits.js")
 if os.path.isdir(os.path.dirname(appjs)):
     open(appjs, "w", encoding="utf-8").write(
         "window.EXITS = " + json.dumps(by_station, ensure_ascii=False) + ";\n")
-print("-> exits.json + app/exits.js")
+print("-> exits.json + docs/exits.js")
