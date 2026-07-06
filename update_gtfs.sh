@@ -8,3 +8,5 @@ curl -sL --max-time 60 -A "$UA" -H "Referer: https://www.metrolisboa.pt/" \
   -o gtfs.zip "https://www.metrolisboa.pt/google_transit/googleTransit.zip"
 rm -rf gtfs && unzip -oq gtfs.zip -d gtfs && rm gtfs.zip
 python3 build_stations.py
+# saídas vêm do OpenStreetMap (não do GTFS); falha não é fatal
+python3 build_exits.py || echo "aviso: build_exits falhou (Overpass ocupado?), saídas mantêm-se as anteriores"

@@ -34,6 +34,15 @@
   .lines{display:flex;flex-wrap:wrap;gap:6px}
   .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;
         font-size:13px;font-weight:600;color:#111}
+  .exits{margin-top:12px;max-height:34vh;overflow-y:auto}
+  .exits h3{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .exit-row{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-top:1px solid #ffffff12;cursor:pointer}
+  .exit-row:first-of-type{border-top:0}
+  .exit-row .n{flex:0 0 20px;height:20px;border-radius:6px;background:#2a3140;color:var(--muted);
+               font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .exit-row .t{flex:1;font-size:13.5px;line-height:1.3}
+  .exit-row .wc{font-size:12px;flex:0 0 auto;margin-top:1px}
+  .exit-row:active{opacity:.6}
   .close{position:absolute;top:12px;right:14px;color:var(--muted);cursor:pointer;font-size:20px;border:0;background:0}
   .hint{position:absolute;bottom:10px;left:10px;right:10px;z-index:900;text-align:center;
         color:var(--muted);font-size:13px}
@@ -43,6 +52,17 @@
   /* marcador "eu" */
   .me{width:18px;height:18px;border-radius:50%;background:#3b82f6;border:3px solid #fff;
       box-shadow:0 0 0 6px #3b82f655}
+  /* marcador de saída */
+  .exit-dot{width:14px;height:14px;background:#fff;border:2px solid #2a3140;border-radius:4px;
+            display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px #0007}
+  .exit-dot::after{content:'';width:5px;height:5px;border-right:2px solid #2a3140;
+                   border-bottom:2px solid #2a3140;transform:rotate(-45deg);margin-left:-1px}
+  .exit-num{position:absolute;top:-6px;right:-6px;background:#2a3140;color:#fff;font-size:9px;
+            font-weight:700;width:14px;height:14px;border-radius:50%;display:flex;
+            align-items:center;justify-content:center;border:1px solid #fff}
+  .leaflet-tooltip.exit-tip{background:#1a1f29;color:#f2f4f8;border:0;box-shadow:0 3px 12px #0009;
+            font-size:12px;padding:5px 9px;border-radius:8px}
+  .leaflet-tooltip.exit-tip::before{border-top-color:#1a1f29}
 </style>
 </head>
 <body>
@@ -63,11 +83,13 @@
   <h2 id="c-name">—</h2>
   <div class="dist" id="c-dist"></div>
   <div class="lines" id="c-lines"></div>
+  <div class="exits" id="c-exits"></div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="stations.js"></script>
+<script src="exits.js"></script>
 <script>
 const LINE_COLOR = {Azul:'#6699cc',Amarela:'#ffcc00',Verde:'#00cc99',Vermelha:'#ff3366'};
 
@@ -92,6 +114,8 @@ for(const s of STATIONS){
 }
 
 let meMarker=null, lineToStation=null;
+const exitLayer=L.layerGroup().addTo(map);
+const WC_ICON={yes:'♿',limited:'♿',no:'',null:''};
 
 function haversine(a,b,c,d){
   const R=6371000,r=x=>x*Math.PI/180;
@@ -105,6 +129,41 @@ function nearest(lat,lon){
   return {s:best,dist:Math.round(bd)};
 }
 
+let exitMarkers=[];
+function clearExits(){
+  exitLayer.clearLayers();
+  exitMarkers=[];
+}
+
+function renderExits(s){
+  clearExits();
+  const exits=(window.EXITS&&window.EXITS[s.id])||[];
+  // marcadores no mapa
+  exits.forEach((ex,i)=>{
+    const icon=L.divIcon({className:'',iconSize:[14,14],iconAnchor:[7,7],
+      html:`<div style="position:relative"><div class="exit-dot"></div><span class="exit-num">${i+1}</span></div>`});
+    const m=L.marker([ex.lat,ex.lon],{icon,zIndexOffset:500}).addTo(exitLayer);
+    m.bindTooltip(`${i+1}. ${ex.nome}${ex.acesso_cadeira==='yes'?' ♿':''}`,
+                  {direction:'top',className:'exit-tip',offset:[0,-8]});
+    m.on('click',()=>{map.panTo([ex.lat,ex.lon]);m.openTooltip();});
+    exitMarkers.push(m);
+  });
+  // lista no painel
+  const box=document.getElementById('c-exits');box.innerHTML='';
+  if(!exits.length) return;
+  const h=document.createElement('h3');
+  h.textContent=`${exits.length} saída${exits.length>1?'s':''}`;box.appendChild(h);
+  exits.forEach((ex,i)=>{
+    const row=document.createElement('div');row.className='exit-row';
+    const wc=WC_ICON[ex.acesso_cadeira]||'';
+    row.innerHTML=`<span class="n">${i+1}</span>`+
+      `<span class="t">${ex.nome}${ex.elevador?' · elevador':''}</span>`+
+      (wc?`<span class="wc" title="acesso cadeira de rodas">${wc}</span>`:'');
+    row.onclick=()=>{const m=exitMarkers[i];if(m){map.setView([ex.lat,ex.lon],17);m.openTooltip();}};
+    box.appendChild(row);
+  });
+}
+
 function showStation(s,dist){
   document.getElementById('hint').style.display='none';
   document.getElementById('c-name').textContent=s.nome;
@@ -115,6 +174,7 @@ function showStation(s,dist){
     const p=document.createElement('span');p.className='pill';
     p.style.background=l.cor;p.textContent=l.nome;wrap.appendChild(p);
   }
+  renderExits(s);
   document.getElementById('card').classList.add('show');
 }
 
@@ -152,7 +212,10 @@ async function search(){
 }
 document.getElementById('go').onclick=search;
 document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')search();});
-document.getElementById('close').onclick=()=>document.getElementById('card').classList.remove('show');
+document.getElementById('close').onclick=()=>{
+  document.getElementById('card').classList.remove('show');
+  clearExits();
+};
 </script>
 </body>
 </html>

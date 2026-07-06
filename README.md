@@ -12,7 +12,10 @@ próxima de uma localização ou morada.
 | `build_stations.py` | Extrai `stations.json` a partir do GTFS |
 | `stations.json` | 50 estações: `nome`, `lat`, `lon`, `linhas` (nome + cor hex) |
 | `nearest.py` | Estação mais próxima de coordenadas ou morada |
-| `update_gtfs.sh` | Redescarrega o GTFS e reconstrói `stations.json` |
+| `build_exits.py` | Puxa as saídas do OpenStreetMap e associa-as às estações |
+| `exits.json` | Saídas por estação (nome, coords, acesso cadeira de rodas) |
+| `app/` | Web app: mapa com estações + saídas ao clicar |
+| `update_gtfs.sh` | Redescarrega o GTFS e reconstrói `stations.json` + saídas |
 
 ## Usar
 
@@ -38,6 +41,8 @@ pedidos sem User-Agent de browser — o script já trata disso.
 - **GTFS estático** (horários, paragens, rotas, coordenadas): o próprio Metro.
 - **Cores das linhas**: `route_color` no GTFS — Azul `#6699cc`, Amarela
   `#ffcc00`, Verde `#00cc99`, Vermelha `#ff3366`.
+- **Entradas/saídas**: NÃO estão no GTFS. Vêm do **OpenStreetMap**
+  (`railway=subway_entrance`), obtidas via Overpass API em `build_exits.py`.
 - **Tempos de espera em tempo real**: API do Metro em `api.metrolisboa.pt`
   (requer registo/chave). Ainda por integrar.
 
