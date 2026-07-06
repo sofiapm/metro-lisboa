@@ -7,217 +7,311 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
-  :root{
-    --azul:#6699cc; --amarela:#ffcc00; --verde:#00cc99; --vermelha:#ff3366;
-    --bg:#0e1116; --card:#1a1f29; --text:#f2f4f8; --muted:#9aa4b2;
-  }
+  :root{--bg:#0e1116;--card:#1a1f29;--text:#f2f4f8;--muted:#9aa4b2}
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
             background:var(--bg);color:var(--text)}
   #map{position:absolute;inset:0}
   .topbar{position:absolute;top:0;left:0;right:0;z-index:1000;padding:10px;
-          display:flex;gap:8px;background:linear-gradient(#0e1116ee,#0e111600)}
-  .search{flex:1;display:flex;background:var(--card);border-radius:12px;overflow:hidden;
-          box-shadow:0 4px 16px #0006}
-  .search input{flex:1;border:0;background:transparent;color:var(--text);padding:12px 14px;font-size:16px;outline:none}
-  .search input::placeholder{color:var(--muted)}
-  .search button{border:0;background:transparent;color:var(--muted);padding:0 14px;font-size:18px;cursor:pointer}
-  .locbtn{width:48px;border:0;border-radius:12px;background:var(--card);color:var(--text);
-          font-size:20px;cursor:pointer;box-shadow:0 4px 16px #0006}
-  .locbtn:active{transform:scale(.94)}
+          display:flex;flex-direction:column;gap:8px;background:linear-gradient(#0e1116ee,#0e111600 90%)}
+  .row{display:flex;gap:8px}
+  .field{flex:1;display:flex;align-items:center;background:var(--card);border-radius:12px;
+         overflow:hidden;box-shadow:0 4px 16px #0006}
+  .field .dot{width:10px;height:10px;border-radius:50%;margin:0 2px 0 12px;flex:0 0 auto}
+  .field input{flex:1;border:0;background:transparent;color:var(--text);padding:12px 10px;font-size:16px;outline:none;min-width:0}
+  .field input::placeholder{color:var(--muted)}
+  .field .x{border:0;background:0;color:var(--muted);font-size:16px;padding:0 12px;cursor:pointer}
+  .btn{border:0;border-radius:12px;background:var(--card);color:var(--text);
+       font-size:18px;cursor:pointer;box-shadow:0 4px 16px #0006;padding:0 14px}
+  .btn:active{transform:scale(.95)}
+  .btn.go{background:#3b82f6}
   .card{position:absolute;left:10px;right:10px;bottom:10px;z-index:1000;background:var(--card);
-        border-radius:16px;padding:16px 18px;box-shadow:0 8px 30px #0008;transform:translateY(150%);
-        transition:transform .3s ease}
+        border-radius:16px;padding:16px 18px;box-shadow:0 8px 30px #0008;transform:translateY(160%);
+        transition:transform .3s ease;max-height:60vh;overflow-y:auto}
   .card.show{transform:none}
   .card h2{margin:0 0 2px;font-size:20px}
   .card .dist{color:var(--muted);font-size:14px;margin-bottom:10px}
   .lines{display:flex;flex-wrap:wrap;gap:6px}
   .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;
         font-size:13px;font-weight:600;color:#111}
-  .exits{margin-top:12px;max-height:34vh;overflow-y:auto}
+  .close{position:absolute;top:12px;right:14px;color:var(--muted);cursor:pointer;font-size:20px;border:0;background:0;z-index:2}
+  /* saídas */
+  .exits{margin-top:12px}
   .exits h3{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
   .exit-row{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-top:1px solid #ffffff12;cursor:pointer}
   .exit-row:first-of-type{border-top:0}
   .exit-row .n{flex:0 0 20px;height:20px;border-radius:6px;background:#2a3140;color:var(--muted);
                font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
   .exit-row .t{flex:1;font-size:13.5px;line-height:1.3}
-  .exit-row .wc{font-size:12px;flex:0 0 auto;margin-top:1px}
+  .exit-row .wc{font-size:12px;margin-top:1px}
   .exit-row:active{opacity:.6}
-  .close{position:absolute;top:12px;right:14px;color:var(--muted);cursor:pointer;font-size:20px;border:0;background:0}
-  .hint{position:absolute;bottom:10px;left:10px;right:10px;z-index:900;text-align:center;
-        color:var(--muted);font-size:13px}
-  .leaflet-container{background:#0e1116}
-  /* marcador da estação */
+  /* rota */
+  .step{display:flex;gap:10px;padding:8px 0;font-size:14px;line-height:1.35}
+  .step .ic{flex:0 0 26px;text-align:center}
+  .step b{font-weight:600}
+  .step .sub{color:var(--muted);font-size:12.5px}
+  .leg-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700;color:#111}
+  .total{margin-top:6px;padding-top:10px;border-top:1px solid #ffffff18;font-size:16px;font-weight:600}
+  /* marcadores */
   .st-dot{border-radius:50%;border:2.5px solid #0e1116;box-shadow:0 0 0 1.5px #ffffff55}
-  /* marcador "eu" */
-  .me{width:18px;height:18px;border-radius:50%;background:#3b82f6;border:3px solid #fff;
-      box-shadow:0 0 0 6px #3b82f655}
-  /* marcador de saída */
+  .me{width:18px;height:18px;border-radius:50%;background:#3b82f6;border:3px solid #fff;box-shadow:0 0 0 6px #3b82f655}
+  .pin{font-size:26px;line-height:26px;text-shadow:0 1px 3px #000a}
   .exit-dot{width:14px;height:14px;background:#fff;border:2px solid #2a3140;border-radius:4px;
             display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px #0007}
-  .exit-dot::after{content:'';width:5px;height:5px;border-right:2px solid #2a3140;
-                   border-bottom:2px solid #2a3140;transform:rotate(-45deg);margin-left:-1px}
-  .exit-num{position:absolute;top:-6px;right:-6px;background:#2a3140;color:#fff;font-size:9px;
-            font-weight:700;width:14px;height:14px;border-radius:50%;display:flex;
-            align-items:center;justify-content:center;border:1px solid #fff}
+  .exit-num{position:absolute;top:-6px;right:-6px;background:#2a3140;color:#fff;font-size:9px;font-weight:700;
+            width:14px;height:14px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid #fff}
   .leaflet-tooltip.exit-tip{background:#1a1f29;color:#f2f4f8;border:0;box-shadow:0 3px 12px #0009;
             font-size:12px;padding:5px 9px;border-radius:8px}
   .leaflet-tooltip.exit-tip::before{border-top-color:#1a1f29}
+  .leaflet-container{background:#0e1116}
+  .hint{position:absolute;bottom:12px;left:10px;right:10px;z-index:900;text-align:center;color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
 <div id="map"></div>
 
 <div class="topbar">
-  <div class="search">
-    <input id="q" placeholder="Escreve uma morada…" autocomplete="off">
-    <button id="go" title="Procurar">➜</button>
+  <div class="row">
+    <div class="field">
+      <span class="dot" style="background:#3b82f6"></span>
+      <input id="q-o" placeholder="Origem (morada)" autocomplete="off">
+      <button class="btn" id="loc" title="A minha localização" style="box-shadow:none;background:0;font-size:20px">◎</button>
+    </div>
   </div>
-  <button class="locbtn" id="loc" title="A minha localização">◎</button>
+  <div class="row">
+    <div class="field">
+      <span class="dot" style="background:#ff3366"></span>
+      <input id="q-d" placeholder="Destino (opcional)" autocomplete="off">
+      <button class="x" id="clr" title="Limpar" style="display:none">✕</button>
+    </div>
+    <button class="btn go" id="go" title="Ver rota">➜</button>
+  </div>
 </div>
 
-<div class="hint" id="hint">Toca em ◎ para usares a tua localização, ou escreve uma morada.</div>
+<div class="hint" id="hint">Escreve a origem (ou toca ◎) e um destino para veres a rota. Toca numa estação para ver as saídas.</div>
 
 <div class="card" id="card">
   <button class="close" id="close">✕</button>
-  <h2 id="c-name">—</h2>
-  <div class="dist" id="c-dist"></div>
-  <div class="lines" id="c-lines"></div>
-  <div class="exits" id="c-exits"></div>
+  <div id="c-body"></div>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="stations.js"></script>
 <script src="exits.js"></script>
+<script src="graph.js"></script>
 <script>
-const LINE_COLOR = {Azul:'#6699cc',Amarela:'#ffcc00',Verde:'#00cc99',Vermelha:'#ff3366'};
+const LINE={A:['Azul','#6699cc'],B:['Amarela','#ffcc00'],C:['Verde','#00cc99'],D:['Vermelha','#ff3366']};
+const WALK=1.33, TRANSFER=240, BOARD=180, MAX_WALK=1500;
+const S={}; STATIONS.forEach(s=>S[s.id]=s);
 
-const map = L.map('map',{zoomControl:false}).setView([38.736,-9.142],12);
+const map=L.map('map',{zoomControl:false}).setView([38.736,-9.142],12);
 L.control.zoom({position:'bottomright'}).addTo(map);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
-  attribution:'© OpenStreetMap © CARTO', maxZoom:19
-}).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  {attribution:'© OpenStreetMap © CARTO',maxZoom:19}).addTo(map);
 
-// desenhar estações
-const stationMarkers = [];
+// estações no mapa
 for(const s of STATIONS){
-  const cores = s.linhas.map(l=>l.cor);
-  const bg = cores.length===1 ? cores[0]
-           : `conic-gradient(${cores.map((c,i)=>`${c} ${i/cores.length*360}deg ${(i+1)/cores.length*360}deg`).join(',')})`;
-  const size = s.linhas.length>1 ? 15 : 11;
-  const icon = L.divIcon({className:'',iconSize:[size,size],
+  const cores=s.linhas.map(l=>l.cor);
+  const bg=cores.length===1?cores[0]
+    :`conic-gradient(${cores.map((c,i)=>`${c} ${i/cores.length*360}deg ${(i+1)/cores.length*360}deg`).join(',')})`;
+  const size=s.linhas.length>1?15:11;
+  const icon=L.divIcon({className:'',iconSize:[size,size],
     html:`<div class="st-dot" style="width:${size}px;height:${size}px;background:${bg}"></div>`});
-  const m = L.marker([s.lat,s.lon],{icon}).addTo(map);
-  m.on('click',()=>showStation(s,null));
-  stationMarkers.push({s,m});
+  L.marker([s.lat,s.lon],{icon}).addTo(map).on('click',()=>showStation(s,null));
 }
 
-let meMarker=null, lineToStation=null;
-const exitLayer=L.layerGroup().addTo(map);
-const WC_ICON={yes:'♿',limited:'♿',no:'',null:''};
-
-function haversine(a,b,c,d){
-  const R=6371000,r=x=>x*Math.PI/180;
+// ---------- helpers ----------
+function hav(a,b,c,d){const R=6371000,r=x=>x*Math.PI/180;
   const dp=r(c-a),dl=r(d-b);
   const x=Math.sin(dp/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(dl/2)**2;
-  return 2*R*Math.asin(Math.sqrt(x));
+  return 2*R*Math.asin(Math.sqrt(x));}
+function mins(sec){return Math.round(sec/60);}
+async function geocode(q){
+  const u='https://nominatim.openstreetmap.org/search?'+
+    new URLSearchParams({q,format:'json',limit:1,countrycodes:'pt'});
+  const d=await (await fetch(u,{headers:{'Accept-Language':'pt'}})).json();
+  if(!d.length) throw new Error('Morada não encontrada: '+q);
+  return {lat:+d[0].lat,lon:+d[0].lon,nome:d[0].display_name};
 }
-function nearest(lat,lon){
-  let best=null,bd=Infinity;
-  for(const s of STATIONS){const d=haversine(lat,lon,s.lat,s.lon);if(d<bd){bd=d;best=s;}}
-  return {s:best,dist:Math.round(bd)};
+function nearestExit(sid,lat,lon){
+  let best=null,bd=hav(lat,lon,S[sid].lat,S[sid].lon);
+  for(const ex of (EXITS[sid]||[])){const d=hav(lat,lon,ex.lat,ex.lon);if(d<bd){bd=d;best=ex;}}
+  return {ex:best,dist:Math.round(bd)};
 }
+function candidates(lat,lon){
+  const arr=Object.keys(GRAPH).map(sid=>{const {ex,dist}=nearestExit(sid,lat,lon);return {sid,ex,dist};});
+  arr.sort((a,b)=>a.dist-b.dist);
+  const near=arr.filter(c=>c.dist<=MAX_WALK);
+  return near.length?near:arr.slice(0,1);
+}
+// Dijkstra sobre (estação,linha)
+function dijkstra(orig,dest){
+  const key=(s,l)=>s+'|'+l, dist={}, pq=[];
+  const push=(t,s,l,path)=>{pq.push({t,s,l,path});pq.sort((a,b)=>a.t-b.t);};
+  const linesAt=new Set(GRAPH[orig].map(e=>e[2]));
+  for(const l of linesAt){dist[key(orig,l)]=BOARD;push(BOARD,orig,l,[['board',orig,l]]);}
+  let best=null,bestT=Infinity;
+  while(pq.length){
+    const {t,s,l,path}=pq.shift();
+    if(t>(dist[key(s,l)]??Infinity))continue;
+    if(s===dest){if(t<bestT){bestT=t;best=path;}continue;}
+    for(const [nb,sec,nl] of GRAPH[s]){
+      const nt=t+sec+(nl!==l?TRANSFER:0);
+      if(nt<(dist[key(nb,nl)]??Infinity)){
+        dist[key(nb,nl)]=nt;
+        const step=path.concat(nl!==l?[['transfer',s,nl]]:[]).concat([['ride',nb,nl]]);
+        push(nt,nb,nl,step);
+      }
+    }
+  }
+  return {path:best,time:bestT};
+}
+function legs(path){
+  const out=[];let line=null,seq=[];
+  for(const [k,sid,l] of path){
+    if(k==='board'){line=l;seq=[sid];}
+    else if(k==='transfer'){out.push({line,seq});line=l;seq=[sid];}
+    else seq.push(sid);
+  }
+  if(seq.length)out.push({line,seq});
+  return out;
+}
+function segSec(a,b,line){for(const [nb,sec,nl] of GRAPH[a])if(nb===b&&nl===line)return sec;return 0;}
 
+// ---------- camadas ----------
+const exitLayer=L.layerGroup().addTo(map);
+const routeLayer=L.layerGroup().addTo(map);
 let exitMarkers=[];
-function clearExits(){
-  exitLayer.clearLayers();
-  exitMarkers=[];
-}
+const WC={yes:'♿',limited:'♿'};
 
-function renderExits(s){
+function clearExits(){exitLayer.clearLayers();exitMarkers=[];}
+function clearRoute(){routeLayer.clearLayers();}
+function openCard(){document.getElementById('card').classList.add('show');document.getElementById('hint').style.display='none';}
+function closeCard(){document.getElementById('card').classList.remove('show');clearExits();clearRoute();}
+
+// ---------- clique numa estação: info + saídas ----------
+function showStation(s,dist){
+  clearRoute();
+  const exits=EXITS[s.id]||[];
+  let h=`<h2>${s.nome}</h2><div class="dist">${dist!=null?dist+' m · ~'+Math.round(dist/80)+' min a pé':'Estação'}</div>`;
+  h+=`<div class="lines">`+s.linhas.map(l=>`<span class="pill" style="background:${l.cor}">${l.nome}</span>`).join('')+`</div>`;
+  if(exits.length){
+    h+=`<div class="exits"><h3>${exits.length} saída${exits.length>1?'s':''}</h3>`;
+    exits.forEach((ex,i)=>{
+      const extra=[ex.elevador?'elevador':'',ex.escadas>1?ex.escadas+' escadas':''].filter(Boolean).join(' · ');
+      h+=`<div class="exit-row" data-i="${i}"><span class="n">${i+1}</span>`+
+         `<span class="t">${ex.nome}${extra?' · '+extra:''}</span>`+
+         (WC[ex.acesso_cadeira]?`<span class="wc">${WC[ex.acesso_cadeira]}</span>`:'')+`</div>`;
+    });
+    h+=`</div>`;
+  }
+  document.getElementById('c-body').innerHTML=h;
   clearExits();
-  const exits=(window.EXITS&&window.EXITS[s.id])||[];
-  // marcadores no mapa
   exits.forEach((ex,i)=>{
     const icon=L.divIcon({className:'',iconSize:[14,14],iconAnchor:[7,7],
       html:`<div style="position:relative"><div class="exit-dot"></div><span class="exit-num">${i+1}</span></div>`});
     const m=L.marker([ex.lat,ex.lon],{icon,zIndexOffset:500}).addTo(exitLayer);
-    m.bindTooltip(`${i+1}. ${ex.nome}${ex.acesso_cadeira==='yes'?' ♿':''}`,
-                  {direction:'top',className:'exit-tip',offset:[0,-8]});
-    m.on('click',()=>{map.panTo([ex.lat,ex.lon]);m.openTooltip();});
+    m.bindTooltip(`${i+1}. ${ex.nome}`,{direction:'top',className:'exit-tip',offset:[0,-8]});
     exitMarkers.push(m);
   });
-  // lista no painel
-  const box=document.getElementById('c-exits');box.innerHTML='';
-  if(!exits.length) return;
-  const h=document.createElement('h3');
-  h.textContent=`${exits.length} saída${exits.length>1?'s':''}`;box.appendChild(h);
-  exits.forEach((ex,i)=>{
-    const row=document.createElement('div');row.className='exit-row';
-    const wc=WC_ICON[ex.acesso_cadeira]||'';
-    const extra=[ex.elevador?'elevador':'',ex.escadas>1?`${ex.escadas} escadas`:'']
-                 .filter(Boolean).join(' · ');
-    row.innerHTML=`<span class="n">${i+1}</span>`+
-      `<span class="t">${ex.nome}${extra?` · ${extra}`:''}</span>`+
-      (wc?`<span class="wc" title="acesso cadeira de rodas">${wc}</span>`:'');
-    row.onclick=()=>{const m=exitMarkers[i];if(m){map.setView([ex.lat,ex.lon],17);m.openTooltip();}};
-    box.appendChild(row);
+  document.querySelectorAll('.exit-row').forEach(row=>{
+    row.onclick=()=>{const i=+row.dataset.i,ex=exits[i];map.setView([ex.lat,ex.lon],17);exitMarkers[i]&&exitMarkers[i].openTooltip();};
   });
+  openCard();
 }
 
-function showStation(s,dist){
-  document.getElementById('hint').style.display='none';
-  document.getElementById('c-name').textContent=s.nome;
-  const walk=dist!=null?` · ~${Math.round(dist/80)} min a pé`:'';
-  document.getElementById('c-dist').textContent=dist!=null?`${dist} m de distância${walk}`:'Estação';
-  const wrap=document.getElementById('c-lines');wrap.innerHTML='';
-  for(const l of s.linhas){
-    const p=document.createElement('span');p.className='pill';
-    p.style.background=l.cor;p.textContent=l.nome;wrap.appendChild(p);
+// ---------- rota ----------
+function plan(o,d){
+  const O=candidates(o.lat,o.lon), D=candidates(d.lat,d.lon);
+  let best=null;
+  for(const a of O.slice(0,6))for(const b of D.slice(0,6)){
+    const walkIn=a.dist/WALK, walkOut=b.dist/WALK;
+    if(a.sid===b.sid){const total=walkIn+walkOut;if(!best||total<best.total)best={total,a,b,path:null,ride:0};continue;}
+    const {path,time}=dijkstra(a.sid,b.sid);
+    if(!path)continue;
+    const total=walkIn+time+walkOut;
+    if(!best||total<best.total)best={total,a,b,path,ride:time};
   }
-  renderExits(s);
-  document.getElementById('card').classList.add('show');
+  return best;
 }
+function pin(lat,lon,emoji,z){return L.marker([lat,lon],{zIndexOffset:z||1000,
+  icon:L.divIcon({className:'',iconSize:[26,26],iconAnchor:[13,26],html:`<div class="pin">${emoji}</div>`})});}
 
-function setMe(lat,lon,zoom=15){
-  if(meMarker) map.removeLayer(meMarker);
-  meMarker=L.marker([lat,lon],{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[18,18]})}).addTo(map);
-  const {s,dist}=nearest(lat,lon);
-  if(lineToStation) map.removeLayer(lineToStation);
-  lineToStation=L.polyline([[lat,lon],[s.lat,s.lon]],{color:'#fff',weight:2,dashArray:'4 6',opacity:.6}).addTo(map);
-  map.fitBounds([[lat,lon],[s.lat,s.lon]],{padding:[80,80],maxZoom:16});
-  showStation(s,dist);
-}
-
-// localização
-document.getElementById('loc').onclick=()=>{
-  if(!navigator.geolocation){alert('Geolocalização não suportada');return;}
-  navigator.geolocation.getCurrentPosition(
-    p=>setMe(p.coords.latitude,p.coords.longitude),
-    ()=>alert('Não consegui obter a localização. Verifica as permissões.'),
-    {enableHighAccuracy:true,timeout:10000});
-};
-
-// morada -> geocoding
-async function search(){
-  const q=document.getElementById('q').value.trim();
-  if(!q) return;
-  const url='https://nominatim.openstreetmap.org/search?'+
-    new URLSearchParams({q,format:'json',limit:1,countrycodes:'pt'});
-  try{
-    const r=await fetch(url,{headers:{'Accept-Language':'pt'}});
-    const d=await r.json();
-    if(!d.length){alert('Morada não encontrada.');return;}
-    setMe(parseFloat(d[0].lat),parseFloat(d[0].lon));
-  }catch(e){alert('Erro na procura.');}
-}
-document.getElementById('go').onclick=search;
-document.getElementById('q').addEventListener('keydown',e=>{if(e.key==='Enter')search();});
-document.getElementById('close').onclick=()=>{
-  document.getElementById('card').classList.remove('show');
+function showRoute(o,d){
   clearExits();
+  const r=plan(o,d);
+  if(!r){document.getElementById('c-body').innerHTML='<h2>Sem rota</h2><div class="dist">Não encontrei ligação de metro entre esses pontos.</div>';openCard();return;}
+  clearRoute();
+  const {a,b,path}=r;
+  // pontos origem/destino e caminhadas
+  pin(o.lat,o.lon,'🔵',1200).addTo(routeLayer);
+  pin(d.lat,d.lon,'📍',1200).addTo(routeLayer);
+  const inPt=a.ex?[a.ex.lat,a.ex.lon]:[S[a.sid].lat,S[a.sid].lon];
+  const outPt=b.ex?[b.ex.lat,b.ex.lon]:[S[b.sid].lat,S[b.sid].lon];
+  L.polyline([[o.lat,o.lon],inPt],{color:'#fff',weight:2,dashArray:'3 6',opacity:.6}).addTo(routeLayer);
+  L.polyline([outPt,[d.lat,d.lon]],{color:'#fff',weight:2,dashArray:'3 6',opacity:.6}).addTo(routeLayer);
+  const bounds=[[o.lat,o.lon],[d.lat,d.lon]];
+  // pernas de metro
+  let body=`<h2>Rota</h2><div class="dist">${o.nome.split(',')[0]} → ${d.nome.split(',')[0]}</div>`;
+  body+=`<div class="step"><span class="ic">🚶</span><span>~${mins(a.dist/WALK)} min a pé até <b>${S[a.sid].nome}</b>`+
+        (a.ex?`<div class="sub">entra pela saída: ${a.ex.nome}</div>`:'')+`</span></div>`;
+  if(path){
+    for(const {line,seq} of legs(path)){
+      const [nome,cor]=LINE[line];
+      let sec=0;for(let i=0;i<seq.length-1;i++)sec+=segSec(seq[i],seq[i+1],line);
+      const n=seq.length-1;
+      L.polyline(seq.map(id=>[S[id].lat,S[id].lon]),{color:cor,weight:6,opacity:.9}).addTo(routeLayer);
+      seq.forEach(id=>bounds.push([S[id].lat,S[id].lon]));
+      body+=`<div class="step"><span class="ic"><span class="leg-pill" style="background:${cor}">${nome}</span></span>`+
+            `<span><b>${S[seq[0]].nome}</b> → <b>${S[seq[seq.length-1]].nome}</b>`+
+            `<div class="sub">${n} paragem${n>1?'s':''} · ~${mins(sec)} min</div></span></div>`;
+    }
+  }
+  body+=`<div class="step"><span class="ic">🚶</span><span>sai em <b>${S[b.sid].nome}</b>`+
+        (b.ex?`<div class="sub">saída mais perto: ${b.ex.nome}</div>`:'')+
+        `<div class="sub">~${mins(b.dist/WALK)} min a pé até ao destino</div></span></div>`;
+  body+=`<div class="total">⏱️ Total estimado: ~${mins(r.total)} min</div>`;
+  document.getElementById('c-body').innerHTML=body;
+  map.fitBounds(bounds,{padding:[70,70],maxZoom:16});
+  openCard();
+}
+
+// ---------- inputs ----------
+let originPt=null;
+document.getElementById('loc').onclick=()=>{
+  if(!navigator.geolocation)return alert('Geolocalização não suportada');
+  navigator.geolocation.getCurrentPosition(p=>{
+    originPt={lat:p.coords.latitude,lon:p.coords.longitude,nome:'A minha localização'};
+    document.getElementById('q-o').value='A minha localização';
+    L.marker([originPt.lat,originPt.lon],{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[18,18]})}).addTo(routeLayer);
+    tryRoute();
+  },()=>alert('Não consegui obter a localização.'),{enableHighAccuracy:true,timeout:10000});
 };
+async function tryRoute(){
+  const qo=document.getElementById('q-o').value.trim();
+  const qd=document.getElementById('q-d').value.trim();
+  if(!qo)return;
+  try{
+    const o=(originPt&&qo==='A minha localização')?originPt:await geocode(qo);
+    if(!qd){ // só origem -> estação mais próxima
+      const c=candidates(o.lat,o.lon)[0];
+      L.marker([o.lat,o.lon],{icon:L.divIcon({className:'',html:'<div class="me"></div>',iconSize:[18,18]})}).addTo(routeLayer);
+      showStation(S[c.sid],c.dist);
+      map.setView([o.lat,o.lon],15);
+      return;
+    }
+    const d=await geocode(qd);
+    showRoute(o,d);
+  }catch(e){alert(e.message||'Erro na procura.');}
+}
+document.getElementById('go').onclick=tryRoute;
+document.getElementById('q-o').addEventListener('keydown',e=>{if(e.key==='Enter')tryRoute();});
+document.getElementById('q-d').addEventListener('keydown',e=>{if(e.key==='Enter')tryRoute();});
+const clr=document.getElementById('clr'),qd=document.getElementById('q-d');
+qd.addEventListener('input',()=>clr.style.display=qd.value?'block':'none');
+clr.onclick=()=>{qd.value='';clr.style.display='none';};
+document.getElementById('close').onclick=closeCard;
 </script>
 </body>
 </html>
