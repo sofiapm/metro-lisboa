@@ -2,61 +2,23 @@
   "AP": [
     {
       "nome": "Aeroporto",
-      "lat": 38.7686326,
-      "lon": -9.1280417,
-      "dist_m": 25,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Aeroporto",
-      "lat": 38.768553,
-      "lon": -9.1285374,
+      "lat": 38.76873726666666,
+      "lon": -9.128334800000001,
       "dist_m": 19,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Aeroporto",
-      "lat": 38.7690262,
-      "lon": -9.1284253,
-      "dist_m": 49,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 3
     }
   ],
   "AM": [
     {
       "nome": "Alameda",
-      "lat": 38.7375743,
-      "lon": -9.1339999,
-      "dist_m": 36,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7377117,
-      "lon": -9.1336941,
-      "dist_m": 61,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7376034,
-      "lon": -9.1335744,
-      "dist_m": 59,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7372493,
-      "lon": -9.1336284,
-      "dist_m": 40,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "lat": 38.73749231428571,
+      "lon": -9.133766957142857,
+      "dist_m": 6,
+      "acesso_cadeira": "yes",
+      "elevador": true,
+      "escadas": 7
     },
     {
       "nome": "Alameda",
@@ -64,23 +26,8 @@
       "lon": -9.1319657,
       "dist_m": 194,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7372755,
-      "lon": -9.1340221,
-      "dist_m": 6,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7377373,
-      "lon": -9.1338848,
-      "dist_m": 56,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Alameda",
@@ -88,15 +35,8 @@
       "lon": -9.1326846,
       "dist_m": 139,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alameda",
-      "lat": 38.7372947,
-      "lon": -9.133565,
-      "dist_m": 45,
-      "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "AF": [
@@ -106,115 +46,57 @@
       "lon": -9.20446,
       "dist_m": 22,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Praça Teófilo Braga; Rua Damião de Góis",
-      "lat": 38.7606567,
-      "lon": -9.2046641,
+      "lat": 38.760706,
+      "lon": -9.20456075,
       "dist_m": 6,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Praça Teófilo Braga; Rua Damião de Góis",
-      "lat": 38.7607553,
-      "lon": -9.2044574,
-      "dist_m": 27,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Rua Teófilo Braga; Rua Adriano Correia de Oliveira",
-      "lat": 38.7599242,
-      "lon": -9.2042347,
-      "dist_m": 87,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Rua Teófilo Braga; Rua Adriano Correia de Oliveira",
-      "lat": 38.7599189,
-      "lon": -9.2045958,
+      "lat": 38.75992155,
+      "lon": -9.20441525,
       "dist_m": 78,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "AH": [
     {
       "nome": "Alto dos Moínhos",
-      "lat": 38.7495991,
-      "lon": -9.179913,
+      "lat": 38.7496156,
+      "lon": -9.1800967,
       "dist_m": 4,
       "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Alto dos Moínhos",
-      "lat": 38.7496321,
-      "lon": -9.1802804,
-      "dist_m": 30,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "AL": [
     {
       "nome": "Alvalade",
-      "lat": 38.7524692,
-      "lon": -9.1434604,
+      "lat": 38.75242865,
+      "lon": -9.1436154,
       "dist_m": 116,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Alvalade",
-      "lat": 38.7537969,
-      "lon": -9.1445193,
-      "dist_m": 67,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alvalade",
-      "lat": 38.7523881,
-      "lon": -9.1437704,
-      "dist_m": 119,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alvalade",
-      "lat": 38.7538819,
-      "lon": -9.1442573,
-      "dist_m": 57,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alvalade",
-      "lat": 38.7534823,
-      "lon": -9.1439228,
+      "lat": 38.75375568,
+      "lon": -9.14429578,
       "dist_m": 5,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Alvalade",
-      "lat": 38.7538291,
-      "lon": -9.1441821,
-      "dist_m": 49,
       "acesso_cadeira": "yes",
-      "elevador": true
-    },
-    {
-      "nome": "Alvalade",
-      "lat": 38.7537882,
-      "lon": -9.1445974,
-      "dist_m": 72,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": true,
+      "escadas": 5
     }
   ],
   "AS": [
@@ -224,31 +106,17 @@
       "lon": -9.2191236,
       "dist_m": 9,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Amadora Este",
-      "lat": 38.7582342,
-      "lon": -9.2179997,
-      "dist_m": 103,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Amadora Este",
-      "lat": 38.7587349,
-      "lon": -9.2183874,
+      "lat": 38.75842913333333,
+      "lon": -9.218198933333332,
       "dist_m": 79,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Amadora Este",
-      "lat": 38.7583183,
-      "lon": -9.2182097,
-      "dist_m": 84,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 3
     }
   ],
   "AX": [
@@ -258,7 +126,8 @@
       "lon": -9.1597307,
       "dist_m": 35,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Azinhaga da Cidade",
@@ -266,7 +135,8 @@
       "lon": -9.1594322,
       "dist_m": 73,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Escola Básica nº 109",
@@ -274,7 +144,8 @@
       "lon": -9.1596549,
       "dist_m": 29,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua Vitorino Nemésio; Rua Jorge de Sena",
@@ -282,75 +153,39 @@
       "lon": -9.1599456,
       "dist_m": 4,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "AN": [
     {
       "nome": "Anjos",
-      "lat": 38.7278464,
-      "lon": -9.1346764,
-      "dist_m": 140,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Anjos",
-      "lat": 38.7278583,
-      "lon": -9.1348716,
+      "lat": 38.72785235,
+      "lon": -9.134774,
       "dist_m": 139,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Anjos",
-      "lat": 38.7261554,
-      "lon": -9.1348471,
-      "dist_m": 53,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Anjos",
-      "lat": 38.7261672,
-      "lon": -9.1350394,
+      "lat": 38.7261613,
+      "lon": -9.13494325,
       "dist_m": 50,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "AE": [
     {
       "nome": "Areeiro",
-      "lat": 38.7429462,
-      "lon": -9.1334808,
-      "dist_m": 48,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Areeiro",
-      "lat": 38.7428943,
-      "lon": -9.1336524,
-      "dist_m": 35,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Areeiro",
-      "lat": 38.7426149,
-      "lon": -9.1337695,
+      "lat": 38.7428198,
+      "lon": -9.13357195,
       "dist_m": 4,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Areeiro",
-      "lat": 38.7428238,
-      "lon": -9.1333851,
-      "dist_m": 44,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 4
     },
     {
       "nome": "Avenida Almirante Reis (nascente) / Avenida Afonso Costa",
@@ -358,7 +193,8 @@
       "lon": -9.1330688,
       "dist_m": 101,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Almirante Reis (poente) / Avenida João XXI",
@@ -366,49 +202,28 @@
       "lon": -9.1336807,
       "dist_m": 79,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "AR": [
     {
       "nome": "Arroios",
-      "lat": 38.7334172,
-      "lon": -9.1344205,
-      "dist_m": 7,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Arroios",
-      "lat": 38.7333947,
-      "lon": -9.1340326,
-      "dist_m": 37,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Arroios",
-      "lat": 38.731971,
-      "lon": -9.1344644,
-      "dist_m": 167,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Arroios",
-      "lat": 38.7319591,
-      "lon": -9.1342691,
-      "dist_m": 169,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Arroios",
-      "lat": 38.733457,
-      "lon": -9.1344137,
+      "lat": 38.733422966666666,
+      "lon": -9.134288933333332,
       "dist_m": 4,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 3
+    },
+    {
+      "nome": "Arroios",
+      "lat": 38.73196505,
+      "lon": -9.13436675,
+      "dist_m": 167,
+      "acesso_cadeira": "no",
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "AV": [
@@ -418,23 +233,17 @@
       "lon": -9.1446521,
       "dist_m": 178,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida",
-      "lat": 38.7200408,
-      "lon": -9.1456542,
+      "lat": 38.7201048,
+      "lon": -9.14548375,
       "dist_m": 17,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Avenida",
-      "lat": 38.7201688,
-      "lon": -9.1453133,
-      "dist_m": 45,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Saída sem nome",
@@ -442,7 +251,8 @@
       "lon": -9.1442298,
       "dist_m": 191,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "BC": [
@@ -452,7 +262,8 @@
       "lon": -9.1390868,
       "dist_m": 1,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Baixa-Chiado",
@@ -460,133 +271,50 @@
       "lon": -9.1420645,
       "dist_m": 258,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "BV": [
     {
       "nome": "Bela Vista",
-      "lat": 38.7477176,
-      "lon": -9.1185213,
+      "lat": 38.747737900000004,
+      "lon": -9.1184155,
       "dist_m": 3,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Bela Vista",
-      "lat": 38.7477558,
-      "lon": -9.1167401,
+      "lat": 38.747640700000005,
+      "lon": -9.11669345,
       "dist_m": 157,
       "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Bela Vista",
-      "lat": 38.7477582,
-      "lon": -9.1183097,
-      "dist_m": 21,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Bela Vista",
-      "lat": 38.7475256,
-      "lon": -9.1166468,
-      "dist_m": 166,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "CR": [
     {
       "nome": "Avenida de Pádua, Avenida Infante Dom Henrique",
-      "lat": 38.7631974,
-      "lon": -9.1040676,
+      "lat": 38.7631268,
+      "lon": -9.1041119,
       "dist_m": 2,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Avenida de Pádua, Avenida Infante Dom Henrique",
-      "lat": 38.7630562,
-      "lon": -9.1041562,
-      "dist_m": 16,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 2
     }
   ],
   "CS": [
     {
       "nome": "Cais do Sodré",
-      "lat": 38.7060611,
-      "lon": -9.1456701,
-      "dist_m": 57,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7060739,
-      "lon": -9.1463213,
-      "dist_m": 112,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7059228,
-      "lon": -9.1465106,
-      "dist_m": 131,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7057664,
-      "lon": -9.1467031,
-      "dist_m": 152,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7059644,
-      "lon": -9.145022,
-      "dist_m": 21,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.706077,
-      "lon": -9.1450049,
+      "lat": 38.70593202222222,
+      "lon": -9.145742044444445,
       "dist_m": 9,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7058618,
-      "lon": -9.1447236,
-      "dist_m": 42,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7057544,
-      "lon": -9.1460497,
-      "dist_m": 99,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cais do Sodré",
-      "lat": 38.7059064,
-      "lon": -9.1456731,
-      "dist_m": 62,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "acesso_cadeira": "yes",
+      "elevador": false,
+      "escadas": 9
     }
   ],
   "CG": [
@@ -596,23 +324,17 @@
       "lon": -9.1583587,
       "dist_m": 36,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Campo Grande",
-      "lat": 38.7603423,
-      "lon": -9.1579635,
+      "lat": 38.760226,
+      "lon": -9.1582344,
       "dist_m": 51,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Campo Grande",
-      "lat": 38.7601097,
-      "lon": -9.1585053,
-      "dist_m": 55,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Faculdade de Ciências; Universidade Lusófona",
@@ -620,7 +342,8 @@
       "lon": -9.157773,
       "dist_m": 20,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "CP": [
@@ -630,7 +353,8 @@
       "lon": -9.1463678,
       "dist_m": 60,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República (poente); Avenida de Berna",
@@ -638,23 +362,17 @@
       "lon": -9.1470196,
       "dist_m": 4,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Campo Pequeno",
-      "lat": 38.7401051,
-      "lon": -9.1460674,
-      "dist_m": 169,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Campo Pequeno",
-      "lat": 38.7399725,
-      "lon": -9.1466474,
+      "lat": 38.7400388,
+      "lon": -9.1463574,
       "dist_m": 164,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "CA": [
@@ -664,7 +382,8 @@
       "lon": -9.1923072,
       "dist_m": 44,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Marechal Teixeira Rebelo / Rua Eduardo Viana",
@@ -672,7 +391,8 @@
       "lon": -9.1927923,
       "dist_m": 2,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Marechal Teixeira Rebelo / Rua Guiomar Torresão",
@@ -680,7 +400,8 @@
       "lon": -9.1926884,
       "dist_m": 58,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Carnide",
@@ -688,7 +409,8 @@
       "lon": -9.1925109,
       "dist_m": 43,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     }
   ],
   "CH": [
@@ -698,7 +420,8 @@
       "lon": -9.1137257,
       "dist_m": 98,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Doutor Augusto de Castro;Rua Engenheiro Rodrigues de Carvalho",
@@ -706,7 +429,8 @@
       "lon": -9.1140982,
       "dist_m": 4,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Chelas",
@@ -714,7 +438,8 @@
       "lon": -9.1136231,
       "dist_m": 71,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Rua Conselheiro Emídio Navarro (ISEL);Rua André Vidal Negreiros",
@@ -722,25 +447,19 @@
       "lon": -9.1139265,
       "dist_m": 46,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "CU": [
     {
       "nome": "Cidade Universitária",
-      "lat": 38.751152,
-      "lon": -9.1592903,
-      "dist_m": 105,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cidade Universitária",
-      "lat": 38.7509277,
-      "lon": -9.1590301,
-      "dist_m": 118,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "lat": 38.751145900000004,
+      "lon": -9.159218033333334,
+      "dist_m": 89,
+      "acesso_cadeira": "yes",
+      "elevador": true,
+      "escadas": 3
     },
     {
       "nome": "Cidade Universitária",
@@ -748,81 +467,19 @@
       "lon": -9.1586166,
       "dist_m": 2,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Cidade Universitária",
-      "lat": 38.751358,
-      "lon": -9.1593337,
-      "dist_m": 89,
-      "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "CM": [
     {
       "nome": "Colégio Militar/Luz",
-      "lat": 38.7533837,
-      "lon": -9.1897586,
-      "dist_m": 95,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7537622,
-      "lon": -9.1894164,
-      "dist_m": 82,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7533381,
-      "lon": -9.1886427,
+      "lat": 38.7533142,
+      "lon": -9.1892265375,
       "dist_m": 2,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7529573,
-      "lon": -9.1889821,
-      "dist_m": 49,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7538,
-      "lon": -9.1883134,
-      "dist_m": 61,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7526918,
-      "lon": -9.189812,
-      "dist_m": 122,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7528983,
-      "lon": -9.1896263,
-      "dist_m": 96,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Colégio Militar/Luz",
-      "lat": 38.7536822,
-      "lon": -9.1892608,
-      "dist_m": 65,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 8
     }
   ],
   "EN": [
@@ -832,23 +489,17 @@
       "lon": -9.1158483,
       "dist_m": 79,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua General Silva Freire (sul)",
-      "lat": 38.7749313,
-      "lon": -9.1157797,
-      "dist_m": 70,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Rua General Silva Freire (sul)",
-      "lat": 38.7748363,
-      "lon": -9.1151507,
+      "lat": 38.7748838,
+      "lon": -9.1154652,
       "dist_m": 24,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 2
     },
     {
       "nome": "Rua General Silva Freire (sul), Rua Capitão Tenente Oliveira e Carmo",
@@ -856,25 +507,19 @@
       "lon": -9.1149302,
       "dist_m": 29,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "EC": [
     {
       "nome": "Avenida da República (nascente) / Rua de Entre Campos",
-      "lat": 38.7464979,
-      "lon": -9.1476371,
+      "lat": 38.74636285,
+      "lon": -9.1476042,
       "dist_m": 176,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Avenida da República (nascente) / Rua de Entre Campos",
-      "lat": 38.7462278,
-      "lon": -9.1475713,
-      "dist_m": 206,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Avenida da República (poente)",
@@ -882,7 +527,8 @@
       "lon": -9.1482661,
       "dist_m": 179,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República / Avenida 5 de Outubro",
@@ -890,7 +536,8 @@
       "lon": -9.1482102,
       "dist_m": 229,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República / Avenida 5 de Outubro",
@@ -898,7 +545,8 @@
       "lon": -9.1480396,
       "dist_m": 309,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida das Forças Armadas",
@@ -906,7 +554,8 @@
       "lon": -9.1485315,
       "dist_m": 18,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Entrecampos",
@@ -914,7 +563,8 @@
       "lon": -9.149081,
       "dist_m": 113,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Entrecampos",
@@ -922,7 +572,8 @@
       "lon": -9.1482398,
       "dist_m": 193,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Jardim do Campo Grande",
@@ -930,75 +581,39 @@
       "lon": -9.1490074,
       "dist_m": 77,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "IN": [
     {
       "nome": "Intendente",
-      "lat": 38.7230385,
-      "lon": -9.1353572,
-      "dist_m": 88,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Intendente",
-      "lat": 38.7228422,
-      "lon": -9.1351792,
-      "dist_m": 67,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Intendente",
-      "lat": 38.7224663,
-      "lon": -9.1354148,
-      "dist_m": 26,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Intendente",
-      "lat": 38.7222726,
-      "lon": -9.1352379,
+      "lat": 38.7226549,
+      "lon": -9.135297275,
       "dist_m": 7,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 4
     },
     {
       "nome": "Intendente",
-      "lat": 38.7238899,
-      "lon": -9.1352751,
-      "dist_m": 183,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Intendente",
-      "lat": 38.723875,
-      "lon": -9.1350724,
+      "lat": 38.723882450000005,
+      "lon": -9.13517375,
       "dist_m": 182,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "JZ": [
     {
       "nome": "Jardim Zoológico",
-      "lat": 38.7421755,
-      "lon": -9.1686961,
+      "lat": 38.74222076666667,
+      "lon": -9.168709333333332,
       "dist_m": 2,
       "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.7424084,
-      "lon": -9.1683109,
-      "dist_m": 44,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 6
     },
     {
       "nome": "Jardim Zoológico",
@@ -1006,147 +621,48 @@
       "lon": -9.1680382,
       "dist_m": 97,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Jardim Zoológico",
-      "lat": 38.7420072,
-      "lon": -9.1693433,
-      "dist_m": 57,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.7402896,
-      "lon": -9.1665075,
-      "dist_m": 285,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.7403152,
-      "lon": -9.167079,
+      "lat": 38.7403024,
+      "lon": -9.16679325,
       "dist_m": 251,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.7424869,
-      "lon": -9.1683835,
-      "dist_m": 45,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.742297,
-      "lon": -9.1683542,
-      "dist_m": 35,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Jardim Zoológico",
-      "lat": 38.7419496,
-      "lon": -9.169168,
-      "dist_m": 46,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "LA": [
     {
       "nome": "Laranjeiras",
-      "lat": 38.7485566,
-      "lon": -9.1724309,
+      "lat": 38.748393899999996,
+      "lon": -9.172757775,
       "dist_m": 3,
       "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Laranjeiras",
-      "lat": 38.748433,
-      "lon": -9.1727429,
-      "dist_m": 29,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Laranjeiras",
-      "lat": 38.7482221,
-      "lon": -9.1728726,
-      "dist_m": 51,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Laranjeiras",
-      "lat": 38.7483639,
-      "lon": -9.1729847,
-      "dist_m": 51,
-      "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 4
     }
   ],
   "LU": [
     {
       "nome": "Lumiar",
-      "lat": 38.7728471,
-      "lon": -9.1598245,
+      "lat": 38.772794024999996,
+      "lon": -9.159691375000001,
       "dist_m": 11,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 4
     },
     {
       "nome": "Lumiar",
-      "lat": 38.7728866,
-      "lon": -9.1593249,
-      "dist_m": 33,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Lumiar",
-      "lat": 38.7728067,
-      "lon": -9.1595744,
-      "dist_m": 11,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Lumiar",
-      "lat": 38.7741327,
-      "lon": -9.1598028,
-      "dist_m": 146,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Lumiar",
-      "lat": 38.7742936,
-      "lon": -9.1596751,
-      "dist_m": 164,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Lumiar",
-      "lat": 38.7737883,
-      "lon": -9.1596461,
+      "lat": 38.774071533333334,
+      "lon": -9.159708,
       "dist_m": 107,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Lumiar",
-      "lat": 38.7726357,
-      "lon": -9.1600417,
-      "dist_m": 36,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 3
     }
   ],
   "MP": [
@@ -1156,7 +672,8 @@
       "lon": -9.1491337,
       "dist_m": 146,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 2",
@@ -1164,7 +681,8 @@
       "lon": -9.1498056,
       "dist_m": 92,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 3",
@@ -1172,7 +690,8 @@
       "lon": -9.1500222,
       "dist_m": 75,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 4",
@@ -1180,7 +699,8 @@
       "lon": -9.1507138,
       "dist_m": 8,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 5",
@@ -1188,7 +708,8 @@
       "lon": -9.1507596,
       "dist_m": 6,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 6",
@@ -1196,7 +717,8 @@
       "lon": -9.1483588,
       "dist_m": 243,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Acesso 7",
@@ -1204,7 +726,8 @@
       "lon": -9.1488622,
       "dist_m": 225,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Elevador",
@@ -1212,49 +735,28 @@
       "lon": -9.1498753,
       "dist_m": 89,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     }
   ],
   "MM": [
     {
       "nome": "Martim Moniz",
-      "lat": 38.7168286,
-      "lon": -9.135691,
+      "lat": 38.7168802,
+      "lon": -9.135900566666669,
       "dist_m": 5,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 3
     },
     {
       "nome": "Martim Moniz",
-      "lat": 38.7169109,
-      "lon": -9.1363646,
-      "dist_m": 55,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Martim Moniz",
-      "lat": 38.7169011,
-      "lon": -9.1356461,
-      "dist_m": 13,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Martim Moniz",
-      "lat": 38.7181131,
-      "lon": -9.1358425,
+      "lat": 38.71812,
+      "lon": -9.1357461,
       "dist_m": 145,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Martim Moniz",
-      "lat": 38.7181269,
-      "lon": -9.1356497,
-      "dist_m": 146,
-      "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "MO": [
@@ -1264,7 +766,8 @@
       "lon": -9.1028807,
       "dist_m": 39,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua 1º de Maio (poente), Rua Almirante Gago Coutinho",
@@ -1272,7 +775,8 @@
       "lon": -9.1030525,
       "dist_m": 47,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua João Pinto Ribeiro",
@@ -1280,7 +784,8 @@
       "lon": -9.1029551,
       "dist_m": 28,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Rua João Pinto Ribeiro (nascente)",
@@ -1288,7 +793,8 @@
       "lon": -9.1028347,
       "dist_m": 20,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua João Pinto Ribeiro (poente)",
@@ -1296,7 +802,8 @@
       "lon": -9.1030083,
       "dist_m": 33,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "OD": [
@@ -1306,7 +813,8 @@
       "lon": -9.173106,
       "dist_m": 10,
       "acesso_cadeira": "limited",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua Egas Moniz / Rua Álvaro Campos",
@@ -1314,7 +822,8 @@
       "lon": -9.1730284,
       "dist_m": 33,
       "acesso_cadeira": "limited",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Saída sem nome",
@@ -1322,17 +831,19 @@
       "lon": -9.1724733,
       "dist_m": 71,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "OL": [
     {
       "nome": "Olaias",
-      "lat": 38.7391941,
-      "lon": -9.123652,
+      "lat": 38.7393717,
+      "lon": -9.123618,
       "dist_m": 1,
-      "acesso_cadeira": null,
-      "elevador": false
+      "acesso_cadeira": "yes",
+      "elevador": true,
+      "escadas": 2
     },
     {
       "nome": "Olaias",
@@ -1340,15 +851,8 @@
       "lon": -9.1240654,
       "dist_m": 101,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Olaias",
-      "lat": 38.7395493,
-      "lon": -9.123584,
-      "dist_m": 41,
-      "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "OS": [
@@ -1358,15 +862,17 @@
       "lon": -9.1113764,
       "dist_m": 63,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Olivais",
-      "lat": 38.7602738,
-      "lon": -9.1119533,
-      "dist_m": 112,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "lat": 38.760489566666664,
+      "lon": -9.112098166666668,
+      "dist_m": 63,
+      "acesso_cadeira": "yes",
+      "elevador": true,
+      "escadas": 3
     },
     {
       "nome": "Olivais",
@@ -1374,23 +880,8 @@
       "lon": -9.1120078,
       "dist_m": 3,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Olivais",
-      "lat": 38.7607189,
-      "lon": -9.1121728,
-      "dist_m": 63,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Olivais",
-      "lat": 38.760476,
-      "lon": -9.1121684,
-      "dist_m": 90,
-      "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "OR": [
@@ -1400,7 +891,8 @@
       "lon": -9.0995323,
       "dist_m": 21,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Oriente",
@@ -1408,23 +900,17 @@
       "lon": -9.0986129,
       "dist_m": 101,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Saída sem nome",
-      "lat": 38.7676428,
-      "lon": -9.0986268,
+      "lat": 38.76779515,
+      "lon": -9.09861295,
       "dist_m": 102,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Saída sem nome",
-      "lat": 38.7679475,
-      "lon": -9.0985991,
-      "dist_m": 102,
-      "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "PA": [
@@ -1434,117 +920,59 @@
       "lon": -9.1501975,
       "dist_m": 7,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "PI": [
     {
       "nome": "Picoas",
-      "lat": 38.7310118,
-      "lon": -9.1470511,
-      "dist_m": 63,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Picoas",
-      "lat": 38.73081,
-      "lon": -9.1469173,
-      "dist_m": 40,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Picoas",
-      "lat": 38.7308811,
-      "lon": -9.1461333,
-      "dist_m": 42,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Picoas",
-      "lat": 38.7299139,
-      "lon": -9.1469629,
-      "dist_m": 90,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Picoas",
-      "lat": 38.7306478,
-      "lon": -9.1464943,
+      "lat": 38.730860740000004,
+      "lon": -9.146545380000001,
       "dist_m": 1,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 5
     },
     {
       "nome": "Picoas",
-      "lat": 38.73006,
-      "lon": -9.1473481,
-      "dist_m": 98,
+      "lat": 38.72998695,
+      "lon": -9.1471555,
+      "dist_m": 90,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Picoas",
-      "lat": 38.730953,
-      "lon": -9.1461309,
-      "dist_m": 47,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "PO": [
     {
       "nome": "Pontinha",
-      "lat": 38.7620271,
-      "lon": -9.1967447,
-      "dist_m": 44,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Pontinha",
-      "lat": 38.7624009,
-      "lon": -9.1969351,
+      "lat": 38.762214,
+      "lon": -9.1968399,
       "dist_m": 0,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "PE": [
     {
       "nome": "Praça de Espanha",
-      "lat": 38.7380153,
-      "lon": -9.1601944,
-      "dist_m": 156,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Praça de Espanha",
-      "lat": 38.7377659,
-      "lon": -9.159973,
+      "lat": 38.7378906,
+      "lon": -9.160083700000001,
       "dist_m": 132,
-      "acesso_cadeira": null,
-      "elevador": false
+      "acesso_cadeira": "yes",
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Praça de Espanha",
-      "lat": 38.7378949,
-      "lon": -9.1587644,
-      "dist_m": 37,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Praça de Espanha",
-      "lat": 38.7374568,
-      "lon": -9.1585307,
+      "lat": 38.73767585,
+      "lon": -9.158647550000001,
       "dist_m": 25,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "QC": [
@@ -1554,31 +982,17 @@
       "lon": -9.1555852,
       "dist_m": 97,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Quinta das Conchas",
-      "lat": 38.7671253,
-      "lon": -9.1553957,
+      "lat": 38.7672217,
+      "lon": -9.155604566666668,
       "dist_m": 6,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Quinta das Conchas",
-      "lat": 38.7672461,
-      "lon": -9.1557582,
-      "dist_m": 31,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Quinta das Conchas",
-      "lat": 38.7672937,
-      "lon": -9.1556598,
-      "dist_m": 28,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 3
     }
   ],
   "RA": [
@@ -1588,7 +1002,8 @@
       "lon": -9.1546937,
       "dist_m": 58,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Largo do Rato, Rua das Amoreiras, Avenida Álvares Cabral, Rua de São Bento",
@@ -1596,7 +1011,8 @@
       "lon": -9.1556826,
       "dist_m": 137,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Largo do Rato, Rua do Salitre, Rua Alexandre Herculano, Rua da Escola Politécnica",
@@ -1604,131 +1020,57 @@
       "lon": -9.1540331,
       "dist_m": 9,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "RB": [
     {
       "nome": "Reboleira",
-      "lat": 38.7522354,
-      "lon": -9.2247256,
-      "dist_m": 51,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Reboleira",
-      "lat": 38.7518958,
-      "lon": -9.2240117,
-      "dist_m": 37,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Reboleira",
-      "lat": 38.7523547,
-      "lon": -9.2245978,
+      "lat": 38.75229505,
+      "lon": -9.224661699999999,
       "dist_m": 43,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Reboleira",
-      "lat": 38.7513288,
-      "lon": -9.2235653,
-      "dist_m": 110,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Reboleira",
-      "lat": 38.7516646,
-      "lon": -9.2237828,
-      "dist_m": 68,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "lat": 38.75162973333334,
+      "lon": -9.223786600000002,
+      "dist_m": 37,
+      "acesso_cadeira": "yes",
+      "elevador": false,
+      "escadas": 3
     },
     {
       "nome": "Saída sem nome",
-      "lat": 38.7504287,
-      "lon": -9.2229638,
-      "dist_m": 223,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Saída sem nome",
-      "lat": 38.7505235,
-      "lon": -9.2232687,
+      "lat": 38.7504761,
+      "lon": -9.22311625,
       "dist_m": 202,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     }
   ],
   "RE": [
     {
       "nome": "Restauradores",
-      "lat": 38.7153799,
-      "lon": -9.1409911,
-      "dist_m": 64,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.7151077,
-      "lon": -9.1415437,
+      "lat": 38.7152466,
+      "lon": -9.141364620000001,
       "dist_m": 7,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 5
     },
     {
       "nome": "Restauradores",
-      "lat": 38.7150845,
-      "lon": -9.1414137,
-      "dist_m": 18,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.7153169,
-      "lon": -9.1410079,
-      "dist_m": 59,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.7164246,
-      "lon": -9.1426892,
-      "dist_m": 175,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.7165063,
-      "lon": -9.1425287,
-      "dist_m": 177,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.7164437,
-      "lon": -9.1425135,
+      "lat": 38.7164582,
+      "lon": -9.142577133333333,
       "dist_m": 170,
       "acesso_cadeira": "yes",
-      "elevador": true
-    },
-    {
-      "nome": "Restauradores",
-      "lat": 38.715344,
-      "lon": -9.1418667,
-      "dist_m": 36,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": true,
+      "escadas": 3
     },
     {
       "nome": "Saída sem nome",
@@ -1736,99 +1078,39 @@
       "lon": -9.1419011,
       "dist_m": 58,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "RM": [
     {
       "nome": "Roma",
-      "lat": 38.7483759,
-      "lon": -9.1415929,
-      "dist_m": 23,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Roma",
-      "lat": 38.7489128,
-      "lon": -9.1414876,
-      "dist_m": 53,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Roma",
-      "lat": 38.7488049,
-      "lon": -9.1418427,
-      "dist_m": 58,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Roma",
-      "lat": 38.7472293,
-      "lon": -9.1406546,
-      "dist_m": 148,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Roma",
-      "lat": 38.7484567,
-      "lon": -9.1413301,
+      "lat": 38.748637575,
+      "lon": -9.141563324999998,
       "dist_m": 2,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 4
     },
     {
       "nome": "Roma",
-      "lat": 38.7471274,
-      "lon": -9.1409382,
-      "dist_m": 151,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Roma",
-      "lat": 38.7472722,
-      "lon": -9.1410065,
+      "lat": 38.747209633333334,
+      "lon": -9.140866433333333,
       "dist_m": 134,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 3
     }
   ],
   "RO": [
     {
       "nome": "Rossio",
-      "lat": 38.713849,
-      "lon": -9.1389018,
+      "lat": 38.7139177,
+      "lon": -9.138670575,
       "dist_m": 5,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Rossio",
-      "lat": 38.7140193,
-      "lon": -9.1384114,
-      "dist_m": 51,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Rossio",
-      "lat": 38.7139778,
-      "lon": -9.1389526,
-      "dist_m": 15,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Rossio",
-      "lat": 38.7138247,
-      "lon": -9.1384165,
-      "dist_m": 47,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 4
     },
     {
       "nome": "Rossio",
@@ -1836,7 +1118,8 @@
       "lon": -9.1375263,
       "dist_m": 130,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "SA": [
@@ -1846,39 +1129,26 @@
       "lon": -9.1428093,
       "dist_m": 240,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República (nascente); Avenida João Crisóstomo (nascente)",
-      "lat": 38.7354634,
-      "lon": -9.1449522,
+      "lat": 38.735492550000004,
+      "lon": -9.14495825,
       "dist_m": 58,
       "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Avenida da República (nascente); Avenida João Crisóstomo (nascente)",
-      "lat": 38.7355217,
-      "lon": -9.1449643,
-      "dist_m": 60,
-      "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Avenida da República (sul)",
-      "lat": 38.7348652,
-      "lon": -9.1454091,
+      "lat": 38.734785099999996,
+      "lon": -9.14539145,
       "dist_m": 48,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Avenida da República (sul)",
-      "lat": 38.734705,
-      "lon": -9.1453738,
-      "dist_m": 66,
       "acesso_cadeira": "limited",
-      "elevador": false
+      "elevador": false,
+      "escadas": 2
     },
     {
       "nome": "Avenida da República (sul), Avenida Duque de Ávila",
@@ -1886,7 +1156,8 @@
       "lon": -9.144811,
       "dist_m": 79,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República(poente); Avenida João Crisóstomo (poente)",
@@ -1894,7 +1165,8 @@
       "lon": -9.1455359,
       "dist_m": 9,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida da República, Avenida Duque de Ávila",
@@ -1902,7 +1174,8 @@
       "lon": -9.1448268,
       "dist_m": 74,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Praça Duque de Saldanha, Avenida Praia da Vitória, Avenida Defensores de Chaves, Avenida Casal Ribeiro",
@@ -1910,7 +1183,8 @@
       "lon": -9.1442045,
       "dist_m": 180,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Praça Duque de Saldanha, Avenida Praia da Vitória, Avenida Fontes Pereira de Melo, Rua das Picoas, Avenida 5 de Outubro",
@@ -1918,7 +1192,8 @@
       "lon": -9.1455777,
       "dist_m": 157,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Rua Dona Filipa de Vilhena; Rua Dona Estefânia",
@@ -1926,67 +1201,30 @@
       "lon": -9.1425637,
       "dist_m": 261,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "SP": [
     {
       "nome": "Santa Apolónia",
-      "lat": 38.713519,
-      "lon": -9.1223465,
-      "dist_m": 35,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Santa Apolónia",
-      "lat": 38.7136445,
-      "lon": -9.1222077,
-      "dist_m": 34,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Santa Apolónia",
-      "lat": 38.7138694,
-      "lon": -9.1225949,
+      "lat": 38.71367763333333,
+      "lon": -9.122383033333334,
       "dist_m": 10,
-      "acesso_cadeira": "yes;no",
-      "elevador": true
+      "acesso_cadeira": "no",
+      "elevador": true,
+      "escadas": 3
     }
   ],
   "SR": [
     {
       "nome": "Senhor Roubado",
-      "lat": 38.7855143,
-      "lon": -9.1715901,
-      "dist_m": 55,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Senhor Roubado",
-      "lat": 38.7858239,
-      "lon": -9.1717226,
-      "dist_m": 38,
-      "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Senhor Roubado",
-      "lat": 38.7857419,
-      "lon": -9.17204,
+      "lat": 38.785627999999996,
+      "lon": -9.17181545,
       "dist_m": 9,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Senhor Roubado",
-      "lat": 38.7854319,
-      "lon": -9.1719091,
-      "dist_m": 41,
-      "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 4
     }
   ],
   "SS": [
@@ -1996,7 +1234,8 @@
       "lon": -9.1541672,
       "dist_m": 8,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida António Augusto de Aguiar, Avenida Ressano Garcia",
@@ -2004,7 +1243,8 @@
       "lon": -9.1543639,
       "dist_m": 34,
       "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 1
     },
     {
       "nome": "Avenida António Augusto de Aguiar, Rua Carlos Testa",
@@ -2012,7 +1252,8 @@
       "lon": -9.1526451,
       "dist_m": 210,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Duque de Ávila (nascente)",
@@ -2020,7 +1261,8 @@
       "lon": -9.1509318,
       "dist_m": 287,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Duque de Ávila (poente), Rua Marquês Sá da Bandeira, Rua Marquês de Fronteira, Rua Pinheiro Chagas",
@@ -2028,7 +1270,8 @@
       "lon": -9.1517973,
       "dist_m": 212,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Avenida Ressano Garcia, Bairro Azul",
@@ -2036,7 +1279,8 @@
       "lon": -9.1544839,
       "dist_m": 40,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "El Corte Inglés",
@@ -2044,7 +1288,8 @@
       "lon": -9.1539781,
       "dist_m": 120,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "El Corte Inglés",
@@ -2052,7 +1297,8 @@
       "lon": -9.1532011,
       "dist_m": 212,
       "acesso_cadeira": null,
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Saída sem nome",
@@ -2060,33 +1306,19 @@
       "lon": -9.1544693,
       "dist_m": 68,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     }
   ],
   "TE": [
     {
       "nome": "Telheiras",
-      "lat": 38.7603515,
-      "lon": -9.1660343,
+      "lat": 38.7601285,
+      "lon": -9.166420733333334,
       "dist_m": 2,
       "acesso_cadeira": "yes",
-      "elevador": false
-    },
-    {
-      "nome": "Telheiras",
-      "lat": 38.7598634,
-      "lon": -9.1668724,
-      "dist_m": 90,
-      "acesso_cadeira": null,
-      "elevador": false
-    },
-    {
-      "nome": "Telheiras",
-      "lat": 38.7601706,
-      "lon": -9.1663555,
-      "dist_m": 34,
-      "acesso_cadeira": "yes",
-      "elevador": true
+      "elevador": true,
+      "escadas": 3
     }
   ],
   "TP": [
@@ -2096,7 +1328,8 @@
       "lon": -9.1348826,
       "dist_m": 146,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Terreiro do Paço",
@@ -2104,31 +1337,17 @@
       "lon": -9.13544,
       "dist_m": 183,
       "acesso_cadeira": "no",
-      "elevador": false
+      "elevador": false,
+      "escadas": 1
     },
     {
       "nome": "Terreiro do Paço",
-      "lat": 38.7069906,
-      "lon": -9.1336018,
-      "dist_m": 32,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Terreiro do Paço",
-      "lat": 38.7071688,
-      "lon": -9.1333995,
+      "lat": 38.70709076666666,
+      "lon": -9.133731299999999,
       "dist_m": 6,
-      "acesso_cadeira": "no",
-      "elevador": false
-    },
-    {
-      "nome": "Terreiro do Paço",
-      "lat": 38.7071129,
-      "lon": -9.1341926,
-      "dist_m": 74,
       "acesso_cadeira": "yes",
-      "elevador": false
+      "elevador": false,
+      "escadas": 3
     }
   ]
 }

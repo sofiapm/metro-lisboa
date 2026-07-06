@@ -156,8 +156,10 @@ function renderExits(s){
   exits.forEach((ex,i)=>{
     const row=document.createElement('div');row.className='exit-row';
     const wc=WC_ICON[ex.acesso_cadeira]||'';
+    const extra=[ex.elevador?'elevador':'',ex.escadas>1?`${ex.escadas} escadas`:'']
+                 .filter(Boolean).join(' · ');
     row.innerHTML=`<span class="n">${i+1}</span>`+
-      `<span class="t">${ex.nome}${ex.elevador?' · elevador':''}</span>`+
+      `<span class="t">${ex.nome}${extra?` · ${extra}`:''}</span>`+
       (wc?`<span class="wc" title="acesso cadeira de rodas">${wc}</span>`:'');
     row.onclick=()=>{const m=exitMarkers[i];if(m){map.setView([ex.lat,ex.lon],17);m.openTooltip();}};
     box.appendChild(row);

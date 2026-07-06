@@ -70,9 +70,48 @@ for e in elements:
         "elevador": t.get("highway") == "elevator",
     })
 
-# ordenar saídas de cada estação por nome
+# fundir duplicados: saídas com nome idêntico a < MERGE_DIST uma da outra
+# (no OSM cada escada é um nó; para o utilizador é a mesma "saída").
+# Saídas com nomes diferentes NÃO são fundidas, mesmo que próximas.
+MERGE_DIST = 60
+import re
+def norm(n): return re.sub(r"\s+", " ", n).replace(" (", "(").strip().lower()
+
+def merge_station(exits):
+    n = len(exits)
+    parent = list(range(n))
+    def find(i):
+        while parent[i] != i: parent[i] = parent[parent[i]]; i = parent[i]
+        return i
+    for i in range(n):
+        for j in range(i+1, n):
+            if norm(exits[i]["nome"]) == norm(exits[j]["nome"]) and \
+               hav(exits[i]["lat"], exits[i]["lon"], exits[j]["lat"], exits[j]["lon"]) < MERGE_DIST:
+                parent[find(i)] = find(j)
+    groups = {}
+    for i in range(n): groups.setdefault(find(i), []).append(exits[i])
+    out = []
+    for g in groups.values():
+        wc = next((x["acesso_cadeira"] for x in g if x["acesso_cadeira"] in ("yes", "limited")),
+                  g[0]["acesso_cadeira"])
+        out.append({
+            "nome": g[0]["nome"],
+            "lat": sum(x["lat"] for x in g)/len(g),
+            "lon": sum(x["lon"] for x in g)/len(g),
+            "dist_m": min(x["dist_m"] for x in g),
+            "acesso_cadeira": wc,
+            "elevador": any(x["elevador"] for x in g),
+            "escadas": len(g),          # nº de nós OSM fundidos
+        })
+    return out
+
+merged_total = 0
 for sid in by_station:
+    before = len(by_station[sid])
+    by_station[sid] = merge_station(by_station[sid])
+    merged_total += before - len(by_station[sid])
     by_station[sid].sort(key=lambda x: x["nome"])
+print(f"{merged_total} nós duplicados fundidos (mesmo nome, < {MERGE_DIST} m)")
 
 total = sum(len(v) for v in by_station.values())
 com = sum(1 for v in by_station.values() if v)
