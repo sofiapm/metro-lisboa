@@ -69,7 +69,14 @@ for st in stations.values():
     })
 out.sort(key=lambda x: x["nome"])
 
-dest = os.path.join(os.path.dirname(__file__), "stations.json")
+base = os.path.dirname(__file__)
+dest = os.path.join(base, "stations.json")
 with open(dest, "w", encoding="utf-8") as f:
     json.dump(out, f, ensure_ascii=False, indent=2)
-print(f"{len(out)} estações -> {dest}")
+
+# também para a web app (permite abrir index.html via file:// sem servidor)
+appjs = os.path.join(base, "app", "stations.js")
+if os.path.isdir(os.path.dirname(appjs)):
+    with open(appjs, "w", encoding="utf-8") as f:
+        f.write("window.STATIONS = " + json.dumps(out, ensure_ascii=False) + ";\n")
+print(f"{len(out)} estações -> stations.json + app/stations.js")
