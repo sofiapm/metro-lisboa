@@ -14,8 +14,12 @@ próxima de uma localização ou morada.
 | `nearest.py` | Estação mais próxima de coordenadas ou morada |
 | `build_exits.py` | Puxa as saídas do OpenStreetMap e associa-as às estações |
 | `exits.json` | Saídas por estação (nome, coords, acesso cadeira de rodas) |
+| `build_graph.py` | Constrói o grafo da rede (tempos por troço) → `graph.json` |
+| `route.py` | Planeia viagem morada→destino (trocas, saídas); `--real` usa tempos reais |
+| `ml_api.py` | Acesso à API de tempos reais (chaves no Keychain, refresh de token) |
+| `tempos.py` | Tempos de espera reais numa estação (nome/morada/coords) |
 | `docs/` | Web app: mapa com estações + saídas ao clicar |
-| `update_gtfs.sh` | Redescarrega o GTFS e reconstrói `stations.json` + saídas |
+| `update_gtfs.sh` | Redescarrega o GTFS e reconstrói `stations.json` + grafo + saídas |
 
 ## Usar
 
@@ -43,8 +47,13 @@ pedidos sem User-Agent de browser — o script já trata disso.
   `#ffcc00`, Verde `#00cc99`, Vermelha `#ff3366`.
 - **Entradas/saídas**: NÃO estão no GTFS. Vêm do **OpenStreetMap**
   (`railway=subway_entrance`), obtidas via Overpass API em `build_exits.py`.
-- **Tempos de espera em tempo real**: API do Metro em `api.metrolisboa.pt`
-  (requer registo/chave). Ainda por integrar.
+- **Tempos de espera em tempo real**: API do Metro (`EstadoServicoML`) no gateway
+  `api.metrolisboa.pt:8243`. Credenciais no macOS Keychain (não versionadas).
+  Usado por `ml_api.py` / `tempos.py` / `route.py --real`.
+    ```bash
+    python3 tempos.py Saldanha                       # próximos comboios reais
+    python3 route.py "Rato" "Aeroporto" --real       # rota com espera real
+    ```
 
 ## Próximos passos
 
